@@ -63,7 +63,7 @@ To ensure parallel development among 3 team members, the system strictly separat
                             ▼
 ┌────────────────────────────────────────────────────────┐
 │                       PART 1                           │
-│             👁️ VISION / HAND TRACKING                 │
+│              👁️ VISION / HAND TRACKING                 │
 │                                                        │
 │       Webcam ──> OpenCV ──> MediaPipe                  │
 │       OUTPUT: 21 (x, y, z) Hand Landmarks              │
