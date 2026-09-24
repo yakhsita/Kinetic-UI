@@ -269,10 +269,10 @@ touchless-hci/
 ### Git commands
 
 1. **Clone the repository:**
-          ```bash
-          git clone <REPOSITORY_URL>
-          cd touchless-hci
-          ```
+   ```bash
+   git clone <REPOSITORY_URL>
+   cd touchless-hci
+   ```
 
 2. **Get the latest changes**
    Before starting work:
