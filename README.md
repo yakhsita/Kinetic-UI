@@ -1,4 +1,4 @@
-# Kinetic-UI: Touchless HCI System Using Real-Time Computer Vision and Hand Gesture Recognition
+# Kinetic-UI: Touchless HCI System Using Real-Time Computer Vision
 
 > **CSE Mini Project** | **Team Size:** 3 Members  
 > **One-Line Summary:** A webcam-based touchless Human-Computer Interaction (HCI) system that converts hand movements into system commands using computer vision, gesture recognition algorithms, and OS-level control.
