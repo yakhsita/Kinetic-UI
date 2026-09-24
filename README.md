@@ -119,11 +119,11 @@ To ensure parallel development among 3 team members, the system strictly separat
   * Render real-time visual feedback and display current FPS.
 * **Input:**
   
-           📷 Camera
-                ↓
-              Frame
-                ↓
-            MediaPipe
+     📷 Camera
+         ↓
+       Frame
+         ↓
+     MediaPipe
 
 ```
 Landmark Skeleton Index Reference:
