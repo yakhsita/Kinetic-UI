@@ -117,6 +117,13 @@ To ensure parallel development among 3 team members, the system strictly separat
   * Execute MediaPipe Hands pipeline to extract 21 keypoints per detected hand.
   * Normalize $x, y \in [0.0, 1.0]$ based on frame dimensions, with relative $z$ depth.
   * Render real-time visual feedback and display current FPS.
+* **Input:**
+  
+           📷 Camera
+                ↓
+              Frame
+                ↓
+            MediaPipe
 
 ```
 Landmark Skeleton Index Reference:
