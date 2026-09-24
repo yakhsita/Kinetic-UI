@@ -235,7 +235,7 @@ Input:
 ## 📁 14. Repository Structure
 
 ```text
-touchless-hci/
+Kinetic-UI/
 ├── vision/
 │   ├── __init__.py
 │   └── hand_tracking.py      # Part 1: Webcam capture & MediaPipe tracking
