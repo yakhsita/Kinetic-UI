@@ -328,8 +328,8 @@ Add safe shutdown handling
 | ✓ Write clear commit messages | ✗ Don't commit __pycache__ |
 | ✓ Push your branch | ✗ Don't commit .pyc files | 
 | ✓ Tell the team before changing shared files | ✗ Don't commit .env files |
-|  | ✗ Don't upload huge videos |
-|  | ✗ Don't directly rewrite another person's module |
+| - | ✗ Don't upload huge videos |
+| - | ✗ Don't directly rewrite another person's module |
 
 ### Installations
 
