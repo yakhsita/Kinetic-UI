@@ -321,7 +321,7 @@ Add safe shutdown handling
 
 ### Git Rules
 | DO | DON'T | 
-| :--- | :--- | :--- |
+| :--- | :--- | 
 | ✓ Pull before starting work | ✗ Don't use git push --force | 
 | ✓ Work mainly inside your assigned folder | ✗ Don't delete someone else's work | 
 | ✓ Commit regularly | ✗ Don't commit .venv |
