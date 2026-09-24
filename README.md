@@ -139,6 +139,24 @@ Landmark Skeleton Index Reference:
        /
   0 ● (Wrist)
 ```
+```
+* **Output:**
+  
+The module should provide landmark coordinates such as:
+
+[
+    (0.52, 0.81, 0.03),
+    (0.48, 0.74, 0.01),
+    (0.45, 0.67, 0.00),
+    ...
+]
+
+Each landmark contains approximately:
+
+(x, y, z)
+
+The exact values will change depending on the hand position.
+```
 
 ---
 
@@ -152,6 +170,18 @@ Landmark Skeleton Index Reference:
     $$\theta = \arccos\left(\frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}\right)$$
   * Apply rule-based decision logic or ML classification models (KNN / Random Forest).
   * Package commands with contextual data (e.g., normalized coordinates for movement).
+```
+* **Input:**
+
+Part 2 receives: 21 hand landmarks
+
+For example:
+[
+    (0.52, 0.81, 0.03),
+    (0.48, 0.74, 0.01),
+    ...
+]
+```
 
 #### Initial Gesture-to-Command Matrix
 
@@ -175,6 +205,16 @@ Landmark Skeleton Index Reference:
   * Handle background process execution, signal management (`SIGINT`, `SIGTERM`), and shell wrappers (`run.sh`).
   * Implement system debouncing (preventing duplicate click firings within $N$ milliseconds).
   * Ensure process cleanup using `trap` directives in shell scripts.
+  * **Windows users**
+      * If someone is working on Windows but needs Linux functionality, they can use:
+              WSL2 + Ubuntu
+        Part 1 and Part 2 can remain on Windows.
+```
+* **Input:**
+"LEFT_CLICK"
+"SWIPE_LEFT"
+"PAUSE"
+```
 
 #### Native Command Mapping
 
