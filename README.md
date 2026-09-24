@@ -118,7 +118,7 @@ To ensure parallel development among 3 team members, the system strictly separat
   * Normalize $x, y \in [0.0, 1.0]$ based on frame dimensions, with relative $z$ depth.
   * Render real-time visual feedback and display current FPS.
 ```
-* **Input:**
+Input:
   
       📷 Camera
           ↓
@@ -140,7 +140,7 @@ Landmark Skeleton Index Reference:
   0 ● (Wrist)
 ```
 ```
-* **Output:**
+Output
   
 The module should provide landmark coordinates such as:
 
@@ -171,7 +171,7 @@ The exact values will change depending on the hand position.
   * Apply rule-based decision logic or ML classification models (KNN / Random Forest).
   * Package commands with contextual data (e.g., normalized coordinates for movement).
 ```
-* **Input:**
+Input:
 
 Part 2 receives: 21 hand landmarks
 
@@ -210,7 +210,7 @@ For example:
               WSL2 + Ubuntu
         Part 1 and Part 2 can remain on Windows.
 ```
-* **Input:**
+Input:
 "LEFT_CLICK"
 "SWIPE_LEFT"
 "PAUSE"
@@ -257,14 +257,14 @@ touchless-hci/
 
 ---
 
-## 🚀 Getting Started & Execution
+## 🚀 Getting Started w Git & GitHub & Execution
 
 ### Prerequisites
 * Python 3.8 or higher
 * Linux / Ubuntu (or WSL2 with X11/Wayland forwarding on Windows)
 * Integrated or USB Webcam
 
-### Installation
+### Git commands
 
 1. **Clone the repository:**
    ```bash
@@ -272,13 +272,72 @@ touchless-hci/
    cd touchless-hci
    ```
 
-2. **Set up a virtual environment:**
+2. **Get the latest changes**
+   Before starting work:
+   ```bash
+   git pull
+   ```
+
+3. **Create your own branch**
+      **PART 1**
+   ```bash
+   git checkout -b feature/vision
+   ```
+      **PART 2**
+   ```bash
+   git checkout -b feature/gesture
+   ```
+      **PART 3**
+   ```bash
+   git checkout -b feature/linux
+   ```
+
+5. **After making changes**
+   Check what changed:
+   ```bash
+   git status
+   ```
+   Add files:
+   ```bash
+   git add
+   ```
+   Commit:
+   ```bash
+   git commit -m "Add hand landmark detection"
+   ```
+   Push:
+   ```bash
+   git push -u origin feature/vision
+   ```
+Use a meaningful commit message describing what you actually changed.
+
+Examples:
+Add MediaPipe hand tracking
+Add pinch gesture detection
+Add Linux command executor
+Add safe shutdown handling
+
+### Git Rules
+| **DO** | **DON'T** | 
+| :--- | :--- | :--- |
+| ✓ Pull before starting work | ✗ Don't use git push --force | 
+| ✓ Work mainly inside your assigned folder | ✗ Don't delete someone else's work | 
+| ✓ Commit regularly | ✗ Don't commit .venv |
+| ✓ Write clear commit messages | ✗ Don't commit __pycache__ |
+| ✓ Push your branch | ✗ Don't commit .pyc files | 
+| ✓ Tell the team before changing shared files | ✗ Don't commit .env files |
+|  | ✗ Don't upload huge videos |
+|  | ✗ Don't directly rewrite another person's module |
+
+### Installations
+
+1. **Set up a virtual environment:**
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
    ```
 
-3. **Install dependencies:**
+2. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
@@ -305,22 +364,20 @@ touchless-hci/
 
 ---
 
-## 🧪 Testing Strategy
+## 🛠️ Team Responsibilities
 
-Each subsystem can be tested independently without hardware or cross-module dependencies:
+| Team Member | Main Responsibility | Main Output |
+|---|---|---|
+| Part 1 | Vision / Hand Tracking | 21 landmarks |
+| Part 2 | Gesture Recognition | Standard command |
+| Part 3 | OS / Linux Integration | Computer action |
 
-1. **Vision Module (`test_vision.py`):** Asserts frame retrieval, checks array shapes, verifies 21 landmark output tuples.
-2. **Gesture Module (`test_gestures.py`):** Feeds predefined synthetic landmark matrices to verify that expected gesture strings and parameters are generated correctly.
-3. **System Module (`test_system.py`):** Issues isolated commands directly to verify that OS actions (e.g., cursor repositioning, click triggers) perform without exceptions.
-4. **End-to-End Integration:** Runs `main.py` to confirm the full pipeline:
-   $$\text{Webcam Frame} \xrightarrow{\quad} \text{Landmarks} \xrightarrow{\quad} \text{Gesture} \xrightarrow{\quad} \text{Command} \xrightarrow{\quad} \text{OS Action}$$
-
----
-
-## 🛠️ Git & Workflow Rules
-
-To maintain repository integrity during multi-developer workflows:
-
+* **File Naming Conventions:**
+  1. **Vision Module (`test_vision.py`):** Asserts frame retrieval, checks array shapes, verifies 21 landmark output tuples.
+  2. **Gesture Module (`test_gestures.py`):** Feeds predefined synthetic landmark matrices to verify that expected gesture strings and parameters are generated correctly.
+  3. **System Module (`test_system.py`):** Issues isolated commands directly to verify that OS actions (e.g., cursor repositioning, click triggers) perform without exceptions.
+  4. **End-to-End Integration:** Runs `main.py` to confirm the full pipeline:
+      $$\text{Webcam Frame} \xrightarrow{\quad} \text{Landmarks} \xrightarrow{\quad} \text{Gesture} \xrightarrow{\quad} \text{Command} \xrightarrow{\quad} \text{OS Action}$$
 * **Branch Naming Conventions:**
   * Part 1: `feature/vision`
   * Part 2: `feature/gesture`
@@ -333,21 +390,86 @@ To maintain repository integrity during multi-developer workflows:
 
 ---
 
-## 📅 Roadmap & Milestones
+## ✅ Definition of "Done"
 
-- [x] **Phase 1: Architecture & Interface Design** (Decoupled input/output specifications defined)
-- [ ] **Phase 2: Subsystem Development** (Independent creation of `vision`, `gestures`, and `system` modules)
-- [ ] **Phase 3: Initial Integration** (Single-gesture end-to-end pipeline: `PINCH` $\rightarrow$ `LEFT_CLICK`)
-- [ ] **Phase 4: Gesture Set Expansion** (Implementation of `MOVE`, `SWIPE`, `PAUSE`, `STOP`)
-- [ ] **Phase 5: System Refinement** (Coordinate smoothing, action debouncing, error handling, `trap` exit signals)
-- [ ] **Optional Upgrade:** Replace rule-based gesture detection with a trained machine learning model (KNN / SVM).
+## Part 1 is done when:
+
+- [ ] Webcam works
+- [ ] Hand is detected
+- [ ] 21 landmarks are available
+- [ ] Landmarks are displayed
+- [ ] Coordinates can be passed to Part 2
+- [ ] Code is committed to GitHub
+
+## Part 2 is done when:
+
+- [ ] Landmark input works
+- [ ] Finger/hand features can be calculated
+- [ ] At least 3 gestures are recognized
+- [ ] Gestures produce standardized commands
+- [ ] Code works with test/fake landmarks
+- [ ] Code is committed to GitHub
+
+## Part 3 is done when:
+
+- [ ] Commands can be received
+- [ ] Commands trigger OS actions
+- [ ] Linux/Bash integration works
+- [ ] Processes can be started/stopped
+- [ ] Safe shutdown is implemented
+- [ ] `run.sh` works
+- [ ] Code is committed to GitHub
+
+## Final project is done when:
+
+- [ ] Webcam → landmarks works
+- [ ] Landmarks → gesture works
+- [ ] Gesture → command works
+- [ ] Command → OS action works
+- [ ] At least one gesture works end-to-end
+- [ ] Multiple gestures work reliably
+- [ ] Project can be demonstrated
+- [ ] README/documentation is updated
 
 ---
 
-## ✅ Definition of "Done"
+# ⭐ 28. The One-Line Summary
 
-* [ ] Hand landmark tracker outputs 21 normalized coordinates at $\ge 20$ FPS.
-* [ ] Gesture classification module correctly resolves at least 3 distinct hand shapes/movements.
-* [ ] Command executor translates commands into real-time OS actions.
-* [ ] Shell execution script (`run.sh`) successfully manages execution and clean termination.
-* [ ] Complete system demo successfully demonstrates touchless interaction through the end-to-end pipeline.
+> **We are building a webcam-based touchless HCI system that converts hand movements into computer commands using real-time computer vision, gesture recognition, and OS-level integration.**
+
+---
+
+# 🔑 Remember
+
+Do not try to build everything at once.
+
+Build:
+
+```text
+PART 1
+Webcam → Landmarks
+```
+
+then:
+
+```text
+PART 2
+Landmarks → Gesture → Command
+```
+
+then:
+
+```text
+PART 3
+Command → OS Action
+```
+
+and finally:
+
+```text
+PART 1 + PART 2 + PART 3
+          ↓
+     FINAL SYSTEM
+```
+
+**Get one complete gesture working first. Then expand.**
