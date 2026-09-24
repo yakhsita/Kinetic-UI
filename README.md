@@ -56,41 +56,41 @@ To ensure parallel development among 3 team members, the system strictly separat
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│                        USER                            │
-│                  ✋ Hand Gesture                       │
+│                               USER                               │
+│                         ✋ Hand Gesture                          │
 └───────────────────────────┬────────────────────────────┘
-                            │
-                            ▼
+                                 │
+                                 ▼
 ┌────────────────────────────────────────────────────────┐
-│                       PART 1                           │
-│              👁️ VISION / HAND TRACKING                 │
-│                                                        │
-│       Webcam ──> OpenCV ──> MediaPipe                  │
-│       OUTPUT: 21 (x, y, z) Hand Landmarks              │
+│                              PART 1                              │
+│                     👁️ VISION / HAND TRACKING                    │
+│                                                                  │
+│                Webcam ──> OpenCV ──> MediaPipe                  │
+│               OUTPUT: 21 (x, y, z) Hand Landmarks                │
 └───────────────────────────┬────────────────────────────┘
-                            │ [Landmarks Data]
-                            ▼
+                                 │ [Landmarks Data]
+                                 ▼
 ┌────────────────────────────────────────────────────────┐
-│                       PART 2                           │
-│             🧠 GESTURE RECOGNITION                     │
-│                                                        │
-│       Landmarks ──> Vector Features ──> Gesture        │
-│       OUTPUT: Standard Command (e.g., "LEFT_CLICK")    │
+│                              PART 2                              │
+│                     🧠 GESTURE RECOGNITION                       │
+│                                                                  │
+│             Landmarks ──> Vector Features ──> Gesture           │
+│            OUTPUT: Standard Command (e.g., "LEFT_CLICK")         │
 └───────────────────────────┬────────────────────────────┘
-                            │ [Standardized Command]
-                            ▼
+                                 │ [Standardized Command]
+                                 ▼
 ┌────────────────────────────────────────────────────────┐
-│                       PART 3                           │
-│             💻 OS / SYSTEM INTEGRATION                 │
-│                                                        │
-│       Command ──> OS Signals / Actions                 │
-│       OUTPUT: Mouse/Keyboard Input, Script Execution   │
+│                             PART 3                               │
+│                     💻 OS / SYSTEM INTEGRATION                   │
+│                                                                  │
+│                 Command ──> OS Signals / Actions                 │
+│           OUTPUT: Mouse/Keyboard Input, Script Execution         │
 └───────────────────────────┬────────────────────────────┘
-                            │
-                            ▼
+                                 │
+                                 ▼
 ┌────────────────────────────────────────────────────────┐
-│                      HOST OS                           │
-│          Mouse / Keyboard / System Process             │
+│                             HOST OS                              │
+│                 Mouse / Keyboard / System Process                │
 └────────────────────────────────────────────────────────┘
 ```
 
