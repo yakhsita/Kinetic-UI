@@ -211,9 +211,11 @@ For example:
         Part 1 and Part 2 can remain on Windows.
 ```
 Input:
+
 "LEFT_CLICK"
 "SWIPE_LEFT"
 "PAUSE"
+
 ```
 
 #### Native Command Mapping
