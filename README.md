@@ -271,7 +271,7 @@ Kinetic-UI/
 1. **Clone the repository:**
    ```bash
    git clone <REPOSITORY_URL>
-   cd touchless-hci
+   cd Kinetic-UI 
    ```
 
 2. **Get the latest changes**
