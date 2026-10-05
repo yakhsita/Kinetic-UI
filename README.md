@@ -296,6 +296,7 @@ Kinetic-UI/
    ```
 
 4. **After making changes**
+   
    Check what changed:
    ```bash
    git status
