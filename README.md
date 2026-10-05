@@ -281,6 +281,7 @@ Kinetic-UI/
    ```
 
 3. **Create your own branch** (according to ur parts)
+   
       **PART 1**
    ```bash
    git checkout -b feature/vision
@@ -294,7 +295,7 @@ Kinetic-UI/
    git checkout -b feature/linux
    ```
 
-5. **After making changes**
+4. **After making changes**
    Check what changed:
    ```bash
    git status
