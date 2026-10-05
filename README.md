@@ -280,7 +280,7 @@ Kinetic-UI/
    git pull
    ```
 
-3. **Create your own branch** (according to ur parts)
+3. **Create your own branch** (only ur parts)
    
       **PART 1**
    ```bash
