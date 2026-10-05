@@ -316,13 +316,11 @@ Kinetic-UI/
 Use a meaningful commit message describing what you actually changed.
 
 Examples:
-Add MediaPipe hand tracking
 
-Add pinch gesture detection
-
-Add Linux command executor
-
-Add safe shutdown handling
+1. Add MediaPipe hand tracking
+2. Add pinch gesture detection
+3. Add Linux command executor
+4. Add safe shutdown handling
 
 ### Git Rules
 | DO | DON'T | 
