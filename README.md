@@ -317,8 +317,11 @@ Use a meaningful commit message describing what you actually changed.
 
 Examples:
 Add MediaPipe hand tracking
+
 Add pinch gesture detection
+
 Add Linux command executor
+
 Add safe shutdown handling
 
 ### Git Rules
